@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankxai.github.io/agentic-operating-system-standard/schemas/workflow.schema.json",
+  "title": "Workflow Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "module",
+    "inputs",
+    "steps",
+    "agents",
+    "skills",
+    "outputs",
+    "validation",
+    "gates",
+    "ledger_entry"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "name": { "type": "string", "minLength": 3 },
+    "module": { "type": "string" },
+    "inputs": { "type": "array", "items": { "type": "string" } },
+    "steps": { "type": "array", "items": { "type": "string" } },
+    "agents": { "type": "array", "items": { "type": "string" } },
+    "skills": { "type": "array", "items": { "type": "string" } },
+    "outputs": { "type": "array", "items": { "type": "string" } },
+    "validation": { "type": "array", "items": { "type": "string" } },
+    "gates": { "type": "array", "items": { "type": "string" } },
+    "ledger_entry": { "type": "string" }
+  }
+}

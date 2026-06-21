@@ -1,0 +1,15 @@
+{
+  "id": "investor-os",
+  "name": "Agentic Investor OS",
+  "buyer": ["angel-investor", "founder", "micro-fund", "accelerator"],
+  "purpose": "Organize thesis, deal flow, diligence, memos, portfolio support, and investor communications.",
+  "first_workflow": "thesis-to-diligence-memo-to-portfolio-loop",
+  "agents": ["thesis-architect", "deal-intake-analyst", "diligence-lead", "compliance-sentinel"],
+  "skills": ["research-synthesis", "market-mapping", "memo-writing", "risk-register-design"],
+  "workflows": ["diligence-memo", "risk-register", "portfolio-support-plan"],
+  "loops": ["investor-loop", "proof-loop", "memory-loop"],
+  "approval_gates": ["investment-decision", "legal-review", "financial-tax-accounting", "confidential-information"],
+  "proof_artifact": "Sample diligence memo with evidence queue, risk register, open questions, and review requirements.",
+  "visibility": "proposed",
+  "repo": "https://github.com/frankxai/agentic-investor-os"
+}

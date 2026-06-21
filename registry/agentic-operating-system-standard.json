@@ -1,0 +1,95 @@
+{
+  "id": "agentic-operating-system-standard",
+  "version": "0.1.0",
+  "status": "public-draft",
+  "definition": "A public standard for building agent-native operating systems with agents, skills, workflows, loops, ledgers, approval gates, and repo-backed governance.",
+  "coreSystems": [
+    {
+      "id": "sis",
+      "name": "Starlight Intelligence System",
+      "role": "intelligence-kernel",
+      "repo": "https://github.com/frankxai/Starlight-Intelligence-System"
+    },
+    {
+      "id": "ais",
+      "name": "Agent Intelligence System",
+      "role": "discovery-and-routing",
+      "repo": "https://github.com/frankxai/Agent-Intelligence-System"
+    },
+    {
+      "id": "acos",
+      "name": "Agentic Creator OS",
+      "role": "creator-execution-substrate",
+      "repo": "https://github.com/frankxai/agentic-creator-os"
+    }
+  ],
+  "modules": [
+    {
+      "id": "creator-os",
+      "name": "Agentic Creator OS",
+      "doc": "modules/creator-os.md",
+      "firstWorkflow": "idea-to-proof-asset-to-launch-loop",
+      "repo": "https://github.com/frankxai/agentic-creator-os",
+      "visibility": "public"
+    },
+    {
+      "id": "business-os",
+      "name": "Agentic Business OS",
+      "doc": "modules/business-os.md",
+      "firstWorkflow": "objective-to-offer-to-operating-cadence",
+      "repo": "https://github.com/frankxai/agentic-business-os",
+      "visibility": "public"
+    },
+    {
+      "id": "investor-os",
+      "name": "Agentic Investor OS",
+      "doc": "modules/investor-os.md",
+      "firstWorkflow": "thesis-to-diligence-memo-to-portfolio-loop",
+      "repo": "https://github.com/frankxai/agentic-investor-os",
+      "visibility": "proposed"
+    },
+    {
+      "id": "domain-intelligence",
+      "name": "Domain Intelligence System",
+      "doc": "modules/domain-intelligence.md",
+      "firstWorkflow": "candidate-to-verification-to-decision-ledger",
+      "repo": "https://github.com/frankxai/domain-intelligence-system",
+      "visibility": "private-pro"
+    },
+    {
+      "id": "asset-intelligence",
+      "name": "Agentic Asset Intelligence",
+      "doc": "modules/asset-intelligence.md",
+      "firstWorkflow": "surface-to-asset-thesis-to-ledger",
+      "repo": "https://github.com/frankxai/agentic-asset-intelligence-system",
+      "visibility": "proposed"
+    }
+  ],
+  "contracts": {
+    "moduleSchema": "schemas/module.schema.json",
+    "agentContractSchema": "schemas/agent-contract.schema.json",
+    "workflowSchema": "schemas/workflow.schema.json",
+    "moduleTemplate": "templates/module-charter.md",
+    "agentTemplate": "templates/agent-contract.md",
+    "skillTemplate": "templates/skills.md",
+    "workflowTemplate": "templates/workflow.md",
+    "handoffTemplate": "templates/handoff-packet.md"
+  },
+  "complianceLevels": [
+    "L0-context-pack",
+    "L1-skill-pack",
+    "L2-workflow-system",
+    "L3-agent-os",
+    "L4-standard-module",
+    "L5-ecosystem-node"
+  ],
+  "nonNegotiables": [
+    "human-approval-for-money-actions",
+    "human-approval-for-investment-decisions",
+    "privacy-gate-before-publication",
+    "evidence-before-public-claims",
+    "validation-before-release",
+    "public-private-boundary-explicit",
+    "runner-agnostic-contracts"
+  ]
+}

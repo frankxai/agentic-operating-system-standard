@@ -1,0 +1,15 @@
+{
+  "id": "business-os",
+  "name": "Agentic Business OS",
+  "buyer": ["founder", "operator", "agency-owner"],
+  "purpose": "Turn business priorities into offer architecture, execution cadence, metrics, and decision ledgers.",
+  "first_workflow": "objective-to-offer-to-operating-cadence",
+  "agents": ["founder-command-lead", "revenue-architect", "ops-lead", "risk-sentinel"],
+  "skills": ["founder-command", "revenue-engine", "pricing-packaging", "customer-success"],
+  "workflows": ["founder-command-brief", "offer-architecture", "weekly-operating-cadence"],
+  "loops": ["business-command-loop", "revenue-loop", "repo-quality-loop"],
+  "approval_gates": ["pricing", "customer-communication", "contract", "public-claim"],
+  "proof_artifact": "Founder command brief with priorities, offer ladder, metrics, and execution wave.",
+  "visibility": "public",
+  "repo": "https://github.com/frankxai/agentic-business-os"
+}

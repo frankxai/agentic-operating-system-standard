@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frankxai.github.io/agentic-operating-system-standard/schemas/agent-contract.schema.json",
+  "title": "Agent Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "role",
+    "objective",
+    "inputs",
+    "allowed_tools",
+    "forbidden_actions",
+    "expected_artifact",
+    "evidence_required",
+    "stop_conditions",
+    "approval_gates",
+    "handoff_format"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "role": { "type": "string", "minLength": 3 },
+    "objective": { "type": "string", "minLength": 10 },
+    "inputs": { "type": "array", "items": { "type": "string" } },
+    "allowed_tools": { "type": "array", "items": { "type": "string" } },
+    "forbidden_actions": { "type": "array", "items": { "type": "string" } },
+    "expected_artifact": { "type": "string" },
+    "evidence_required": { "type": "array", "items": { "type": "string" } },
+    "stop_conditions": { "type": "array", "items": { "type": "string" } },
+    "approval_gates": { "type": "array", "items": { "type": "string" } },
+    "handoff_format": { "type": "string", "enum": ["markdown", "json", "yaml"] }
+  }
+}

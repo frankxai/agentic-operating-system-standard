@@ -1,0 +1,21 @@
+{
+  "name": "agentic-operating-system-standard",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Public standard for agentic operating systems: modules, agents, skills, workflows, loops, ledgers, gates, and repo-backed governance.",
+  "scripts": {
+    "validate": "python scripts/validate_standard.py ."
+  },
+  "keywords": [
+    "agentic-os",
+    "ai-agents",
+    "agent-operating-system",
+    "creator-os",
+    "business-os",
+    "investor-os",
+    "starlight",
+    "acos",
+    "sis"
+  ],
+  "license": "MIT"
+}

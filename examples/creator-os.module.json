@@ -1,0 +1,15 @@
+{
+  "id": "creator-os",
+  "name": "Agentic Creator OS",
+  "buyer": ["creator", "founder", "studio"],
+  "purpose": "Turn creator ideas into publishable assets, offers, launches, and distribution loops.",
+  "first_workflow": "idea-to-proof-asset-to-launch-loop",
+  "agents": ["creative-director", "content-strategist", "product-packager", "risk-sentinel"],
+  "skills": ["content-strategy", "product-packaging", "visual-direction", "launch-planning"],
+  "workflows": ["creator-launch-kit", "content-to-offer", "distribution-loop"],
+  "loops": ["creator-loop", "revenue-loop", "proof-loop"],
+  "approval_gates": ["public-claim", "rights-and-attribution", "paid-offer"],
+  "proof_artifact": "Creator launch kit with one publishable asset and distribution plan.",
+  "visibility": "public",
+  "repo": "https://github.com/frankxai/agentic-creator-os"
+}
