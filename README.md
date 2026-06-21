@@ -25,7 +25,7 @@ The standard has one job: make those systems portable, inspectable, and good eno
 | ACOS | Creator execution substrate: skills, commands, agents, hooks, adapters. | `agentic-creator-os` |
 | Domain Intelligence | First asset-intelligence vertical: names, portfolios, verification, offers. | `domain-intelligence-system` |
 | Business OS | Founder, revenue, offer, ops, customer, partner, and execution system. | `agentic-business-os` |
-| Investor OS | Deal flow, thesis, memo, diligence, portfolio support, and risk governance. | proposed module |
+| Investor OS | Deal flow, thesis, memo, diligence, portfolio support, and risk governance. | `agentic-investor-os` |
 | Asset Intelligence | Cross-vertical asset layer for domains, content, offers, workflows, agents, and ops. | proposed umbrella |
 
 ```mermaid

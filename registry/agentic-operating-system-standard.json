@@ -46,7 +46,7 @@
       "doc": "modules/investor-os.md",
       "firstWorkflow": "thesis-to-diligence-memo-to-portfolio-loop",
       "repo": "https://github.com/frankxai/agentic-investor-os",
-      "visibility": "proposed"
+      "visibility": "public"
     },
     {
       "id": "domain-intelligence",
