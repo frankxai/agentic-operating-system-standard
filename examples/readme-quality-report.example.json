@@ -1,0 +1,19 @@
+{
+  "path": "README.md",
+  "score": 100,
+  "maxScore": 100,
+  "passed": true,
+  "checks": [
+    { "id": "title", "points": 8, "passed": true },
+    { "id": "promise", "points": 10, "passed": true },
+    { "id": "buyer_or_audience", "points": 10, "passed": true },
+    { "id": "first_win", "points": 12, "passed": true },
+    { "id": "artifact_map", "points": 12, "passed": true },
+    { "id": "validation", "points": 12, "passed": true },
+    { "id": "safety_gates", "points": 12, "passed": true },
+    { "id": "standard_alignment", "points": 10, "passed": true },
+    { "id": "commercial_or_release_path", "points": 8, "passed": true },
+    { "id": "bounded_claims", "points": 6, "passed": true }
+  ],
+  "blockers": []
+}

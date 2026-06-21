@@ -52,6 +52,9 @@ flowchart TD
 | [WORKFLOWS.md](./WORKFLOWS.md) | Canonical workflows used across modules. |
 | [LOOPS.md](./LOOPS.md) | Persistent operating loops that make systems improve over time. |
 | [Swarm Operating Model](./docs/SWARM_OPERATING_MODEL.md) | How to route multi-agent execution across strategy, product, risk, repo, and language lanes. |
+| [README Excellence Standard](./docs/README_EXCELLENCE_STANDARD.md) | Engineering-grounded README quality bar for every module and substrate repo. |
+| [Standard Deployment Runbook](./docs/STANDARD_DEPLOYMENT_RUNBOOK.md) | Safe multi-wave rollout process across clean, dirty, public, private, and substrate repos. |
+| [Ecosystem Rollout Plan](./docs/ECOSYSTEM_ROLLOUT_PLAN.md) | Cross-repo rollout plan for README quality, validation, and standard artifacts. |
 | [registry](./registry/agentic-operating-system-standard.json) | Machine-readable standard registry. |
 | [schemas](./schemas) | JSON schemas for modules, agents, and workflows. |
 | [templates](./templates) | Copyable repo, module, agent, skill, and workflow templates. |
@@ -96,6 +99,12 @@ Validate the standard:
 npm run validate
 ```
 
+Assess a README against the quality bar:
+
+```bash
+python scripts/assess_readme_quality.py README.md
+```
+
 Create a new module charter:
 
 ```bash
@@ -108,6 +117,7 @@ Create a repo profile:
 cp templates/repo-readme.md README.md
 cp templates/agents.md AGENTS.md
 cp templates/skills.md SKILLS.md
+cp templates/readme-quality-checklist.md docs/readme-quality-checklist.md
 ```
 
 ## Commercial Strategy

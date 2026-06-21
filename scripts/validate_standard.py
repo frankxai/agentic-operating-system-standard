@@ -18,6 +18,7 @@ REQUIRED_PATHS = [
     "WORKFLOWS.md",
     "LOOPS.md",
     "registry/agentic-operating-system-standard.json",
+    "registry/repo-estate-rollout.json",
     "schemas/module.schema.json",
     "schemas/agent-contract.schema.json",
     "schemas/workflow.schema.json",
@@ -41,6 +42,12 @@ REQUIRED_PATHS = [
     "docs/ADOPTION_PLAYBOOK.md",
     "docs/REPO_GRAPH.md",
     "docs/SWARM_OPERATING_MODEL.md",
+    "docs/README_EXCELLENCE_STANDARD.md",
+    "docs/ECOSYSTEM_ROLLOUT_PLAN.md",
+    "docs/STANDARD_DEPLOYMENT_RUNBOOK.md",
+    "scripts/assess_readme_quality.py",
+    "examples/readme-quality-report.example.json",
+    "templates/readme-quality-checklist.md",
 ]
 
 TEXT_SUFFIXES = {".md", ".json", ".py", ".yml", ".yaml", ".txt"}
@@ -92,6 +99,9 @@ def validate_registry(root: Path) -> int:
     for _, relative in registry["contracts"].items():
         if not (root / relative).exists():
             return fail(f"contract path missing: {relative}")
+    rollout = load_json(root / "registry/repo-estate-rollout.json")
+    if len(rollout.get("repos", [])) < 5:
+        return fail("rollout registry must include at least five repos")
     return 0
 
 

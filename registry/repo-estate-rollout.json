@@ -1,0 +1,87 @@
+{
+  "id": "frankxai-agentic-os-rollout",
+  "version": "0.1.0",
+  "standard": "agentic-operating-system-standard",
+  "objective": "Track which repos are standards, modules, substrates, pro implementations, or future targets in the Agentic Operating System estate.",
+  "repos": [
+    {
+      "name": "agentic-operating-system-standard",
+      "url": "https://github.com/frankxai/agentic-operating-system-standard",
+      "role": "standard",
+      "visibility": "public",
+      "targetCompliance": "L5-ecosystem-node",
+      "status": "active"
+    },
+    {
+      "name": "agentic-investor-os",
+      "url": "https://github.com/frankxai/agentic-investor-os",
+      "role": "module",
+      "visibility": "public",
+      "targetCompliance": "L4-standard-module",
+      "status": "active"
+    },
+    {
+      "name": "agentic-creator-os",
+      "url": "https://github.com/frankxai/agentic-creator-os",
+      "role": "module-and-execution-substrate",
+      "visibility": "public",
+      "targetCompliance": "L5-ecosystem-node",
+      "status": "existing-module"
+    },
+    {
+      "name": "agentic-business-os",
+      "url": "https://github.com/frankxai/agentic-business-os",
+      "role": "module",
+      "visibility": "public",
+      "targetCompliance": "L4-standard-module",
+      "status": "existing-module"
+    },
+    {
+      "name": "domain-intelligence-system",
+      "url": "https://github.com/frankxai/domain-intelligence-system",
+      "role": "private-pro-module",
+      "visibility": "private",
+      "targetCompliance": "L4-standard-module",
+      "status": "active-private-pro"
+    },
+    {
+      "name": "Starlight-Intelligence-System",
+      "url": "https://github.com/frankxai/Starlight-Intelligence-System",
+      "role": "intelligence-kernel",
+      "visibility": "public",
+      "targetCompliance": "L5-ecosystem-node",
+      "status": "existing-substrate"
+    },
+    {
+      "name": "Agent-Intelligence-System",
+      "url": "https://github.com/frankxai/Agent-Intelligence-System",
+      "role": "discovery-and-routing-substrate",
+      "visibility": "public",
+      "targetCompliance": "L5-ecosystem-node",
+      "status": "existing-substrate"
+    },
+    {
+      "name": "agentic-asset-intelligence-system",
+      "url": "https://github.com/frankxai/agentic-asset-intelligence-system",
+      "role": "proposed-module-family",
+      "visibility": "proposed",
+      "targetCompliance": "L4-standard-module",
+      "status": "planned"
+    }
+  ],
+  "rolloutOrder": [
+    "standard",
+    "public-starter-modules",
+    "private-pro-modules",
+    "substrate-alignment",
+    "module-family-expansion"
+  ],
+  "gates": [
+    "clean-worktree-before-edits",
+    "read-local-instructions",
+    "public-private-boundary-check",
+    "readme-quality-check",
+    "validation-command",
+    "ci-success"
+  ]
+}

@@ -4,7 +4,7 @@
   "private": false,
   "description": "Public standard for agentic operating systems: modules, agents, skills, workflows, loops, ledgers, gates, and repo-backed governance.",
   "scripts": {
-    "validate": "python scripts/validate_standard.py ."
+    "validate": "python scripts/validate_standard.py . && python scripts/assess_readme_quality.py README.md"
   },
   "keywords": [
     "agentic-os",
