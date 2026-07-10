@@ -1,6 +1,6 @@
 {
   "name": "agentic-operating-system-standard",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "description": "Public standard for agentic operating systems: modules, agents, skills, workflows, loops, ledgers, gates, and repo-backed governance.",
   "scripts": {

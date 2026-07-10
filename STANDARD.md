@@ -1,6 +1,6 @@
 # Agentic Operating System Standard
 
-Version: `0.1.0`
+Version: `0.2.0`
 
 Status: public draft
 
@@ -22,6 +22,8 @@ It is not a literal computer operating system. It is an operating standard for a
 | Ledger | A durable record of evidence, decisions, owners, gates, and next review. |
 | Gate | A required check before money, publication, legal, customer, wallet, production, or irreversible action. |
 | Adapter | A runner-specific implementation surface for Codex, Claude Code, Antigravity, Grok, Cursor, OpenAI Agents SDK, Google ADK, Microsoft Agent Framework, or another agent runner. |
+| Repository Profile | A versioned operating contract for repository identity, runtime boundaries, team binding, permissions, gates, and evidence. |
+| Team Profile | A versioned composition contract for coordinator and specialist roles, routing, write scopes, gates, verification, and evaluation. |
 
 ## Required Repository Files
 
@@ -55,6 +57,21 @@ Every module MUST define:
 11. Public/private boundaries.
 12. Release and support path.
 
+## Portable Repository And Team Profiles
+
+Ecosystem nodes SHOULD implement these portable contract identifiers:
+
+- `starlight.repo_profile.v2` with canonical schema ID `https://starlight.local/schemas/starlight-repo-profile.v2.schema.json`.
+- `starlight.team_profile.v2` with canonical schema ID `https://starlight.local/schemas/starlight-team-profile.v2.schema.json`.
+
+The adopting control plane owns the canonical schemas and full payloads. Public registries and module repos MUST use sanitized references rather than copying private topology or policy data.
+
+A repository profile binds identity, runtime, data classification, deployment policy, one team profile, allowed tools and write scopes, gates, and required evidence. A team profile defines coordinator and specialist roles, routing and handoffs, permissions, stop conditions, outputs, human gates, evaluation references, and an independent verifier.
+
+The verifier MUST NOT hold implementation write scope over the artifact being verified. Contract projections MUST carry owner, lifecycle, version, portable source reference, and content hash when one is available. Canonical profiles take precedence over repo, registry, and runner projections.
+
+See [Portable Repository And Team Profile Contracts](./docs/PORTABLE_PROFILE_CONTRACTS.md).
+
 ## Agent Contract
 
 Every agent MUST have:
@@ -70,6 +87,8 @@ Every agent MUST have:
 - `stop_conditions`
 - `handoff_format`
 - `approval_gates`
+
+Every agent used through a team profile SHOULD also declare its allowed write scope, completion and blocked-work routes, verifier relationship, and provenance source.
 
 ## Skill Contract
 
@@ -137,7 +156,7 @@ The repo exposes schemas, templates, public/private boundaries, examples, and re
 
 ### L5: Ecosystem Node
 
-The repo interoperates with SIS, ACOS, AIS, GitHub, and multiple agent runners without changing the core contract.
+The repo interoperates with SIS, ACOS, AIS, GitHub, and multiple agent runners without changing the core contract. It exposes compatible repository/team profile references when those profiles are used.
 
 ## Public Claims Policy
 

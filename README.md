@@ -55,6 +55,7 @@ flowchart TD
 | [README Excellence Standard](./docs/README_EXCELLENCE_STANDARD.md) | Engineering-grounded README quality bar for every module and substrate repo. |
 | [Standard Deployment Runbook](./docs/STANDARD_DEPLOYMENT_RUNBOOK.md) | Safe multi-wave rollout process across clean, dirty, public, private, and substrate repos. |
 | [Ecosystem Rollout Plan](./docs/ECOSYSTEM_ROLLOUT_PLAN.md) | Cross-repo rollout plan for README quality, validation, and standard artifacts. |
+| [Portable Profile Contracts](./docs/PORTABLE_PROFILE_CONTRACTS.md) | Public interoperability rules for repository and team profile references. |
 | [registry](./registry/agentic-operating-system-standard.json) | Machine-readable standard registry. |
 | [schemas](./schemas) | JSON schemas for modules, agents, and workflows. |
 | [templates](./templates) | Copyable repo, module, agent, skill, and workflow templates. |
@@ -118,7 +119,11 @@ cp templates/repo-readme.md README.md
 cp templates/agents.md AGENTS.md
 cp templates/skills.md SKILLS.md
 cp templates/readme-quality-checklist.md docs/readme-quality-checklist.md
+cp templates/repo-profile.md REPO_PROFILE.md
+cp templates/team-profile.md TEAM_PROFILE.md
 ```
+
+The Markdown profile files are sanitized documentation projections. Keep canonical `starlight.repo_profile.v2` and `starlight.team_profile.v2` payloads in the adopting control plane.
 
 ## Commercial Strategy
 

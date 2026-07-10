@@ -23,11 +23,42 @@
     "objective": { "type": "string", "minLength": 10 },
     "inputs": { "type": "array", "items": { "type": "string" } },
     "allowed_tools": { "type": "array", "items": { "type": "string" } },
+    "allowed_write_scope": { "type": "array", "items": { "type": "string" } },
     "forbidden_actions": { "type": "array", "items": { "type": "string" } },
     "expected_artifact": { "type": "string" },
     "evidence_required": { "type": "array", "items": { "type": "string" } },
     "stop_conditions": { "type": "array", "items": { "type": "string" } },
     "approval_gates": { "type": "array", "items": { "type": "string" } },
-    "handoff_format": { "type": "string", "enum": ["markdown", "json", "yaml"] }
+    "handoff_format": { "type": "string", "enum": ["markdown", "json", "yaml"] },
+    "routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["on_completion", "when_blocked", "when_approval_required"],
+      "properties": {
+        "on_completion": { "type": "string" },
+        "when_blocked": { "type": "string" },
+        "when_approval_required": { "type": "string" }
+      }
+    },
+    "verifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent_profile_ref", "independent", "evidence"],
+      "properties": {
+        "agent_profile_ref": { "type": "string" },
+        "independent": { "const": true },
+        "evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_ref", "owner_ref", "version"],
+      "properties": {
+        "source_ref": { "type": "string" },
+        "owner_ref": { "type": "string" },
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" }
+      }
+    }
   }
 }

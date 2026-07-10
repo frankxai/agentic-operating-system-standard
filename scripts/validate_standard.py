@@ -45,9 +45,12 @@ REQUIRED_PATHS = [
     "docs/README_EXCELLENCE_STANDARD.md",
     "docs/ECOSYSTEM_ROLLOUT_PLAN.md",
     "docs/STANDARD_DEPLOYMENT_RUNBOOK.md",
+    "docs/PORTABLE_PROFILE_CONTRACTS.md",
     "scripts/assess_readme_quality.py",
     "examples/readme-quality-report.example.json",
     "templates/readme-quality-checklist.md",
+    "templates/repo-profile.md",
+    "templates/team-profile.md",
 ]
 
 TEXT_SUFFIXES = {".md", ".json", ".py", ".yml", ".yaml", ".txt"}
@@ -142,6 +145,37 @@ def validate_text(root: Path) -> int:
     return 0
 
 
+def validate_portable_profiles(root: Path) -> int:
+    required_identifiers = [
+        "starlight.repo_profile.v2",
+        "https://starlight.local/schemas/starlight-repo-profile.v2.schema.json",
+        "starlight.team_profile.v2",
+        "https://starlight.local/schemas/starlight-team-profile.v2.schema.json",
+    ]
+    for relative in [
+        "STANDARD.md",
+        "docs/PORTABLE_PROFILE_CONTRACTS.md",
+        "templates/repo-profile.md",
+        "templates/team-profile.md",
+    ]:
+        text = (root / relative).read_text(encoding="utf-8")
+        expected = required_identifiers[:2] if "repo-profile" in relative else required_identifiers[2:]
+        if relative in {"STANDARD.md", "docs/PORTABLE_PROFILE_CONTRACTS.md"}:
+            expected = required_identifiers
+        for identifier in expected:
+            if identifier not in text:
+                return fail(f"{relative} missing portable profile identifier {identifier}")
+
+    agent_schema = load_json(root / "schemas/agent-contract.schema.json")
+    properties = agent_schema.get("properties", {})
+    for field in ["allowed_write_scope", "routing", "verifier", "provenance"]:
+        if field not in properties:
+            return fail(f"agent contract schema missing optional interoperability field {field}")
+    if properties["verifier"].get("properties", {}).get("independent", {}).get("const") is not True:
+        return fail("agent contract verifier must be independent")
+    return 0
+
+
 def main() -> int:
     root = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
     for relative in REQUIRED_PATHS:
@@ -151,7 +185,7 @@ def main() -> int:
         schema = load_json(root / relative)
         if schema.get("type") != "object":
             return fail(f"{relative} must be an object schema")
-    for check in [validate_registry, validate_examples, validate_text]:
+    for check in [validate_registry, validate_examples, validate_text, validate_portable_profiles]:
         result = check(root)
         if result:
             return result

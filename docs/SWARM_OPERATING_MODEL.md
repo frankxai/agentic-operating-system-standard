@@ -6,6 +6,8 @@ The standard uses multi-agent execution only when the work benefits from separat
 
 One coordinator owns synthesis and risk decisions. The coordinator does not do every task. The coordinator keeps the objective stable, routes work, checks gates, and produces the final handoff.
 
+The available team is described by `starlight.team_profile.v2`. Each job selects the smallest useful set of roles, normally three to five, and narrows their write scopes for that objective. The bound repository is described by `starlight.repo_profile.v2`.
+
 ## Standard Swarm Lanes
 
 | Lane | Agent | Artifact | Gate |
@@ -75,3 +77,12 @@ Every worker must return:
 - Next action.
 
 Use [handoff-packet.md](../templates/handoff-packet.md).
+
+## Routing And Verification Rule
+
+- Route by declared capability and write scope, not by agent availability alone.
+- Every lane names its completion, blocked-work, and approval handoff.
+- The implementation owner and final verifier are separate roles for material changes.
+- The verifier has read access to the artifact and evidence but no implementation write scope for that artifact.
+- Required gates and evidence come from the stricter of the repository profile, team profile, job contract, and human instruction.
+- Record the canonical profile IDs and projection provenance in the handoff so another runner can reproduce the route.

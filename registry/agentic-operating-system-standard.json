@@ -1,6 +1,6 @@
 {
   "id": "agentic-operating-system-standard",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "public-draft",
   "definition": "A public standard for building agent-native operating systems with agents, skills, workflows, loops, ledgers, approval gates, and repo-backed governance.",
   "coreSystems": [
@@ -73,7 +73,10 @@
     "agentTemplate": "templates/agent-contract.md",
     "skillTemplate": "templates/skills.md",
     "workflowTemplate": "templates/workflow.md",
-    "handoffTemplate": "templates/handoff-packet.md"
+    "handoffTemplate": "templates/handoff-packet.md",
+    "portableProfileGuide": "docs/PORTABLE_PROFILE_CONTRACTS.md",
+    "repoProfileTemplate": "templates/repo-profile.md",
+    "teamProfileTemplate": "templates/team-profile.md"
   },
   "complianceLevels": [
     "L0-context-pack",
