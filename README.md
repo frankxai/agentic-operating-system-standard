@@ -145,3 +145,7 @@ See [Commercial Strategy](./docs/COMMERCIAL_STRATEGY.md).
 ## Status
 
 Public draft. Designed to become the shared specification behind FrankX, Starlight, Arcanea, ACOS, SIS, and specialized agentic operating system modules.
+
+## Quality-first orchestration candidate
+
+See the [task-routing and evaluation guide](docs/quality-first-orchestration.md) for the runnable reference kit and evidence requirements.
