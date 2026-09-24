@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Orchestration dispatch candidate v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "objective",
+    "repo",
+    "access",
+    "risk",
+    "ownedPaths",
+    "inputRefs",
+    "artifact",
+    "stopCondition",
+    "verification",
+    "dependsOn",
+    "request"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "not": {
+        "enum": [
+          "constructor",
+          "prototype"
+        ]
+      }
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repo": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+/[a-zA-Z0-9_.-]+$"
+    },
+    "access": {
+      "enum": [
+        "read",
+        "write"
+      ]
+    },
+    "risk": {
+      "enum": [
+        "ordinary",
+        "consequential"
+      ]
+    },
+    "ownedPaths": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*//)[a-zA-Z0-9_.@/ -]+(?<!/)$"
+      }
+    },
+    "inputRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "artifact": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stopCondition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verification": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dependsOn": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "taskClass",
+        "runtime",
+        "tools"
+      ],
+      "properties": {
+        "taskClass": {
+          "enum": [
+            "extraction",
+            "debugging",
+            "feature",
+            "architecture",
+            "security",
+            "research"
+          ]
+        },
+        "runtime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effort": {
+          "type": "string",
+          "minLength": 1
+        },
+        "allowFallback": {
+          "type": "boolean"
+        },
+        "fallbacks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "independentOf": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "access": {
+            "const": "write"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ownedPaths": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}
