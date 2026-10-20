@@ -3,7 +3,7 @@
 ```mermaid
 flowchart TD
   AOSS["agentic-operating-system-standard"] --> SIS["Starlight-Intelligence-System"]
-  AOSS --> AIS["Agent-Intelligence-System"]
+  AOSS --> AIS["agentic-intelligence-system"]
   AOSS --> ACOS["agentic-creator-os"]
   AOSS --> BOS["agentic-business-os"]
   AOSS --> IOS["agentic-investor-os"]
