@@ -53,8 +53,8 @@
       "status": "existing-substrate"
     },
     {
-      "name": "Agent-Intelligence-System",
-      "url": "https://github.com/frankxai/Agent-Intelligence-System",
+      "name": "agentic-intelligence-system",
+      "url": "https://github.com/frankxai/agentic-intelligence-system",
       "role": "discovery-and-routing-substrate",
       "visibility": "public",
       "targetCompliance": "L5-ecosystem-node",

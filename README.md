@@ -21,7 +21,7 @@ The standard has one job: make those systems portable, inspectable, and good eno
 | Layer | Role | Example Repos |
 |---|---|---|
 | SIS | Intelligence kernel: memory, governance, taxonomy, evaluation, provenance. | `Starlight-Intelligence-System` |
-| AIS | Discovery and capability routing: agents, skills, repo metadata, `llms.txt`, MCP. | `Agent-Intelligence-System` |
+| AIS | Discovery and capability routing: agents, skills, repo metadata, `llms.txt`, MCP. | `agentic-intelligence-system` |
 | ACOS | Creator execution substrate: skills, commands, agents, hooks, adapters. | `agentic-creator-os` |
 | Domain Intelligence | First asset-intelligence vertical: names, portfolios, verification, offers. | `domain-intelligence-system` |
 | Business OS | Founder, revenue, offer, ops, customer, partner, and execution system. | `agentic-business-os` |
