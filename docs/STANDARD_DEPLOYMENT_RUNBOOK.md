@@ -43,7 +43,7 @@ Required:
 Targets:
 
 - `Starlight-Intelligence-System`
-- `Agent-Intelligence-System`
+- `agentic-intelligence-system`
 - `starlight-swarm`
 - `agentic-ops-hub`
 

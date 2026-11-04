@@ -12,7 +12,7 @@ The standard repo defines language, contracts, schemas, compliance levels, and t
 |---|---|---|
 | `agentic-operating-system-standard` | Public standard and compliance layer. | Public |
 | `Starlight-Intelligence-System` | Intelligence kernel and public doctrine. | Public |
-| `Agent-Intelligence-System` | Discovery, profiles, routing, MCP, and metadata. | Public |
+| `agentic-intelligence-system` | Discovery, profiles, routing, MCP, and metadata. | Public |
 | `agentic-creator-os` | Creator execution substrate and multi-runner skills. | Public |
 | `agentic-business-os` | Founder, revenue, operations, and business command module. | Public or split public/pro |
 | `agentic-investor-os` | Thesis, diligence, memo, portfolio support, and investor workflows. | Public starter plus private pro |
